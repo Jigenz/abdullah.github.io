@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdullah Azzam Syafrizal Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <h1><a href="#home">Azzam Syafrizal</a></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#ctf-writeups">CTF Writeups</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header id="home">
+        <div class="video-background">
+            <video autoplay muted loop id="bg-video">
+                <source src="background-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="header-container">
+            <div class="profile-background">
+                <img src="azzam.jpg" alt="Abdullah Azzam Syafrizal" class="profile-photo">
+            </div>
+            <div class="header-info">
+                <h1>Abdullah Azzam Syafrizal</h1>
+                <p>Computer Information Security and Assurance Student | CTF Player | Cybersecurity Enthusiast</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Goal-driven, dedicated, and competitively minded final year Computer Information Security and Assurance Student, awarded the prestigious JPA Scholarship for academic excellence. Passionate about cybersecurity, staying updated on emerging technologies. Active participant in CTFs under the nickname "Jigenz," hackathons, and hands-on projects to enhance skills in identifying vulnerabilities and building secure systems. Eager to contribute to the industry with innovative solutions.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li><strong>Programming/Scripting:</strong> Python, Flutter, Java</li>
+            <li><strong>Security Tools:</strong> Wireshark, Burp Suite, Nmap</li>
+            <li><strong>Networking:</strong> TCP/IP, DNS, VPN</li>
+            <li><strong>Cryptography:</strong> AES, RSA, DES</li>
+            <li><strong>Vulnerability Assessment & Penetration Testing</li>
+            <li><strong>Incident Response & Forensics</li>
+            <li><strong>OSINT (Open Source Intelligence)</li>
+        </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <!-- SecurityZAM Project -->
+        <div class="project" id="securityzam">
+            <h3>1. SecurityZAM - OSINT Mobile Application</h3>
+            <p><strong>Author:</strong> Abdullah Azzam Bin Syafrizal</p>
+            <p><strong>Course:</strong> SKJ4333 - Mobile Security System</p>
+            <p><strong>Overview:</strong> SecurityZAM is an OSINT mobile application designed to enhance security with features like secure authentication, two-factor authentication (2FA), geolocation services, and more.</p>
+            <h4>Key Features</h4>
+            <ul>
+                <li><strong>Secure User Authentication:</strong> Firebase authentication, strong password policies.</li>
+                <li><strong>Two-Factor Authentication (2FA):</strong> Phone and email verification for enhanced security.</li>
+                <li><strong>Geolocation Services:</strong> IP geolocation, GPS tracking.</li>
+                <li><strong>QR Code Safety Analysis:</strong> Scans and verifies URLs using Google Safe Browsing API.</li>
+                <li><strong>Runtime Application Self-Protection (RASP):</strong> Monitors for tampering and injection attacks.</li>
+                <li><strong>Device Root Detection:</strong> Identifies compromised devices.</li>
+                <li><strong>Risk-Based Scoring:</strong> Risk assessments based on device status and location.</li>
+            </ul>
+            <h4>Watch the Demo</h4>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/gy7iQQXFK8Y?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <p><a href="https://github.com/Jigenz/SecurityZAM" target="_blank">View on GitHub</a></p>
+        </div>
+
+        <!-- USIM EVENTCIBLE Project -->
+        <div class="project" id="usim-eventcible">
+            <h3>2. USIM EVENTCIBLE: Event Navigation and Tracking Mobile System</h3>
+            <p><strong>Overview:</strong> USIM EVENTCIBLE is a mobile application designed for USIM students to discover, engage with, and participate in campus events. This app centralizes event information and fosters a vibrant campus community through seamless navigation and event tracking.</p>
+            <h4>Features</h4>
+            <ul>
+                <li><strong>Event Browsing:</strong> Discover upcoming events with detailed information.</li>
+                <li><strong>Navigation:</strong> Navigate to event venues with in-app maps.</li>
+                <li><strong>Event Tracking:</strong> Track participation in real-time and earn rewards.</li>
+                <li><strong>Social Sharing:</strong> Share events and updates with friends.</li>
+            </ul>
+            <h4>Watch the Project Research Presentation</h4>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/-g2G7aDpoI0?autoplay=1" frameborder="0"allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                
+            </div>
+            <p><a href="https://github.com/Jigenz/USIM_EVENTCIBLE" target="_blank">View on GitHub</a></p>
+        </div>
+        <!-- Inside Audio-Tsukoyomi Project section -->
+        <div class="project" id="audio-tsukoyomi">
+            <h3>3. Audio-Tsukoyomi - Sound Encryption and Decryption (AES-CBC mode)</h3>
+            <p><strong>Author:</strong> Abdullah Azzam Syafrizal</p>
+            <p><strong>Course:</strong> SKJ4143 - Cryptography and Application</p>
+            <p><strong>Overview:</strong> A Python-based project implementing sound encryption and decryption using AES in CBC mode...</p>
+            
+            <!-- Add Image for Project -->
+            <div class="project-image">
+                <img src="Audio.jpg" alt="Audio-Tsukoyomi Project Screenshot">
+            </div>
+            <p><a href="https://github.com/Jigenz/Audio-Tsukoyomi-Sound-Encryption-and-Decryption-AES-CBC-mode/blob/main/README.md" target="_blank">View on GitHub</a></p>
+            <h4>Key Features</h4>
+            <ul>
+                <li><strong>Splash Screen:</strong> Displays application name, team information, branding image, and animation.</li>
+                <li><strong>Main Window:</strong> AES key entry, encrypt/decrypt audio files, and error handling.</li>
+                <li><strong>Encrypt/Decrypt Process:</strong> Select audio files, enter key length, and process audio files securely.</li>
+                <li><strong>Error Handling:</strong> Catches and handles exceptions during encryption/decryption.</li>
+            </ul>
+        </div>
+
+        
+    </section>
+
+    <!-- CTF Writeups Section -->
+    <section id="ctf-writeups">
+        <h2>CTF Writeups</h2>
+        <div class="ctf-writeup">
+            <h3>SHERPA CTF - Dell Global Business Center Sdn. Bhd Cyberjaya 23-24 Nov</h3>
+            <p><a href="https://github.com/Jigenz/SHERPA-CTF-Write-Up" target="_blank">View Full Writeup</a></p>
+            <p><strong>Challenge Name:</strong> Download The Flag</p>
+            <p><strong>Category:</strong> Miscellaneous (Misc)</p>
+            <p><strong>Points:</strong> 500</p>
+            <p><strong>Difficulty:</strong> Medium</p>
+            <p><strong>Creator:</strong> SKRCTF</p>
+            <h4>Challenge Overview</h4>
+            <p>The objective was to retrieve the flag from a web server without downloading the entire 100 GB file. The provided information for the instance was:</p>
+            <pre>IP Address: 52.148.100.67</pre>
+            <pre>Port: 30632</pre>
+            <pre>Lan Domain: 72-d5af8d6d-b3ea-4a35-b1b9-b0862e449658</pre>
+            <p>Remaining Time: 3576s (~59 minutes)</p>
+
+            <h4>Solution Steps</h4>
+            <ol>
+                <li><strong>Initial Reconnaissance:</strong>
+                    <ul>
+                        <li><strong>Port Scanning:</strong> We used Nmap to identify services on the target IP and port:</li>
+                        <pre>nmap -sV 52.148.100.67 -p 30632</pre>
+                        <pre>PORT      STATE SERVICE VERSION</pre>
+                        <pre>30632/tcp open  http    nginx 1.27.2</pre>
+                        <li><strong>Accessing the Web Server:</strong> Using curl to access the index page:</li>
+                        <pre>curl -v http://52.148.100.67:30632</pre>
+                        <pre>Output: Index of /</pre>
+                        <p>The index page listed a 100 GB flag.txt file.</p>
+                    </ul>
+                </li>
+                <li><strong>Strategy Development:</strong>
+                    <ul>
+                        <li>Partial Content Retrieval using HTTP range requests.</li>
+                        <li>Pattern searching for the flag in retrieved file chunks.</li>
+                    </ul>
+                </li>
+                <li><strong>Partial Content Retrieval:</strong>
+                    <ul>
+                        <li>Fetching the first 1,000 bytes:</li>
+                        <pre>curl -r 0-999 http://52.148.100.67:30632/flag.txt -o flag_start.txt</pre>
+                    </ul>
+                </li>
+            </ol>
+
+            
+        </div>
+        
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <div class="certification">
+            <h3>Microsoft Certified: Azure AI Fundamentals</h3>
+            <p><strong>Issued by:</strong> Microsoft | <strong>Credential ID:</strong> 12345 | <strong>Date Issued:</strong> April 2023</p>
+            <p><a href="https://drive.google.com/file/d/1DMeEt_JyIHScfeikE0n2_ibnUk0QUwEP/view?usp=sharing" target="_blank">View Certificate</a></p>
+        </div>
+        <div class="certification">
+            <h3>Microsoft Certified: Security, Compliance, and Identity Fundamentals</h3>
+            <p><strong>Issued by:</strong> Microsoft | <strong>Credential ID:</strong> 67890 | <strong>Date Issued:</strong> June 2024</p>
+            <p><a href="https://drive.google.com/file/d/1k-nEOyEdvz0-0NUAqfJb9Qrk09CmVQpW/view?usp=sharing" target="_blank">View Certificate</a></p>
+        </div>
+        <div class="certification">
+            <h3>CompTIA IT Fundamentals (ITF+)</h3>
+            <p><strong>Issued by:</strong> CompTIA | <strong>Credential ID:</strong> 54321 | <strong>Date Issued:</strong> November 2024</p>
+            <p><a href="https://drive.google.com/file/d/15orzp6zT3peshDqHikjsTZd1TbuQRBAI/view?usp=sharing" target="_blank">View Certificate</a></p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>If you'd like to get in touch, feel free to reach out through the following:</p>
+        <ul>
+            <li><strong>Email:</strong> azzamabdullah237@gmail.com</li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/azzamsyafrizal/" target="_blank">Azzam Syafrizal</a></li>
+        </ul>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Abdullah Azzam Syafrizal. All rights reserved.</p>
+    </footer>
+</body>
+</html>
