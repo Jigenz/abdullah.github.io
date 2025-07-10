@@ -3,220 +3,1512 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdullah Azzam Syafrizal Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <title>Abdullah Azzam Syafrizal - Cybersecurity Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --ey-black: #161D23;
+            --ey-yellow: #FFE600;
+            --ey-dark: #0f1419;
+            --ey-card: rgba(22, 29, 35, 0.9);
+            --white: #FFFFFF;
+            --teal: #00BFFF;
+            --light-gray: rgba(255, 255, 255, 0.7);
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, var(--ey-dark), var(--ey-black));
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(255, 230, 0, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 230, 0, 0.05) 0%, transparent 20%);
+            filter: blur(60px);
+            z-index: -1;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Ubuntu', sans-serif;
+            margin-bottom: 1rem;
+            color: var(--ey-yellow);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--light-gray);
+        }
+        
+        a {
+            color: var(--ey-yellow);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            display: inline-block;
+            color: var(--ey-yellow);
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--ey-yellow);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--ey-yellow);
+            color: var(--ey-black);
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 230, 0, 0.4);
+        }
+        
+        .card {
+            background: var(--ey-card);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 230, 0, 0.1);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: rgba(16, 22, 28, 0.95);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 230, 0, 0.2);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            margin: 0;
+            color: var(--ey-yellow);
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+        }
+        
+        .nav-links a {
+            color: var(--light-gray);
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--ey-yellow);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Header Section */
+        header {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding-top: 70px;
+            background: rgba(10, 14, 19, 0.7);
+        }
+        
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            filter: brightness(70%) contrast(110%);
+        }
+        
+        #bg-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .profile-background {
+            position: relative;
+            margin-right: 40px;
+        }
+        
+        .profile-photo {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--ey-yellow);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .header-info {
+            color: #fff;
+            text-align: left;
+            max-width: 600px;
+        }
+        
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 0;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            line-height: 1.2;
+        }
+        
+        header .name-highlight {
+            color: var(--ey-yellow);
+        }
+        
+        header p {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            color: var(--light-gray);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(22, 29, 35, 0.7);
+            padding: 10px 15px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 230, 0, 0.2);
+        }
+        
+        .contact-item i {
+            color: var(--ey-yellow);
+            font-size: 1.2rem;
+        }
+        
+        /* Education Section */
+        .education-item {
+            display: flex;
+            margin-bottom: 40px;
+        }
+        
+        .education-icon {
+            flex: 0 0 60px;
+            height: 60px;
+            background: var(--ey-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+        }
+        
+        .education-icon i {
+            color: var(--ey-black);
+            font-size: 1.5rem;
+        }
+        
+        .education-content {
+            flex: 1;
+        }
+        
+        .education-content h3 {
+            color: var(--ey-yellow);
+        }
+        
+        .education-content .date {
+            color: #aaa;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .courses {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .course-tag {
+            background: rgba(255, 230, 0, 0.15);
+            color: var(--ey-yellow);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 230, 0, 0.3);
+        }
+        
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background: var(--ey-yellow);
+            margin-left: -1px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            width: 100%;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            padding-right: calc(50% + 30px);
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            padding-left: calc(50% + 30px);
+        }
+        
+        .timeline-content {
+            background: var(--ey-card);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 230, 0, 0.1);
+        }
+        
+        .timeline-content h3 {
+            color: var(--ey-yellow);
+            margin-bottom: 5px;
+        }
+        
+        .timeline-content .date {
+            color: #aaa;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-content ul {
+            padding-left: 20px;
+        }
+        
+        .timeline-content li {
+            margin-bottom: 10px;
+            color: var(--light-gray);
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--ey-yellow);
+            border: 4px solid var(--ey-black);
+            box-shadow: 0 0 10px var(--ey-yellow);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-marker {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-marker {
+            left: -10px;
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .skill-category h3 {
+            color: var(--ey-yellow);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--ey-yellow);
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .skill-item {
+            background: rgba(255, 230, 0, 0.15);
+            color: var(--ey-yellow);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255, 230, 0, 0.3);
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+        
+        .project {
+            background: var(--ey-card);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 230, 0, 0.1);
+        }
+        
+        .project h3 {
+            color: var(--ey-yellow);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .project p {
+            margin-bottom: 15px;
+        }
+        
+        .project ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .project li {
+            margin-bottom: 10px;
+            color: var(--light-gray);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 230, 0, 0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .project-image {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .project-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 230, 0, 0.1);
+        }
+        
+        /* EY Project Styling */
+        .ey-project {
+            background: var(--ey-card);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 230, 0, 0.2);
+        }
+        
+        .ey-project-header {
+            background: var(--ey-yellow);
+            color: var(--ey-black);
+            padding: 25px 30px;
+        }
+        
+        .ey-project-header h3 {
+            color: var(--ey-black);
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .ey-project-date {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            color: var(--ey-black);
+        }
+        
+        .ey-project-content {
+            padding: 30px;
+            color: var(--light-gray);
+        }
+        
+        .ey-project-content h4 {
+            color: var(--ey-yellow);
+            margin-top: 20px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            border-bottom: 2px solid rgba(255, 230, 0, 0.3);
+            padding-bottom: 8px;
+        }
+        
+        .ey-project-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .ey-project-content li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .ey-project-content li:before {
+            content: "•";
+            color: var(--ey-yellow);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+        
+        .ey-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .ey-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* CTF Section */
+        .ctf-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .ctf-card {
+            background: var(--ey-card);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 230, 0, 0.1);
+        }
+        
+        .ctf-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+        }
+        
+        .ctf-card h3 {
+            color: var(--ey-yellow);
+            margin-bottom: 10px;
+        }
+        
+        .ctf-card .date {
+            color: #aaa;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .ctf-card .placement {
+            font-weight: bold;
+            color: var(--ey-yellow);
+            margin: 10px 0;
+        }
+        
+        /* Achievements Section */
+        .achievements-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .achievement-card {
+            background: var(--ey-card);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 230, 0, 0.1);
+        }
+        
+        .achievement-icon {
+            font-size: 3rem;
+            color: var(--ey-yellow);
+            margin-bottom: 20px;
+        }
+        
+        .achievement-card h3 {
+            color: var(--ey-yellow);
+            margin-bottom: 15px;
+        }
+        
+        .achievement-card .date {
+            color: #aaa;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        /* Certifications Section */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .cert-card {
+            background: var(--ey-card);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid rgba(255, 230, 0, 0.1);
+        }
+        
+        .cert-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .cert-icon {
+            font-size: 2.5rem;
+            color: var(--ey-yellow);
+            margin-right: 15px;
+        }
+        
+        .cert-card h3 {
+            color: var(--ey-yellow);
+            margin-bottom: 5px;
+        }
+        
+        .cert-card .issuer {
+            color: #aaa;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .cert-card .date {
+            margin-top: auto;
+            color: #aaa;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .contact-form {
+            background: var(--ey-card);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 230, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #aaa;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(16, 22, 28, 0.7);
+            border: 1px solid rgba(255, 230, 0, 0.3);
+            border-radius: 4px;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-info-card {
+            background: var(--ey-card);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 230, 0, 0.1);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 230, 0, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            border: 1px solid rgba(255, 230, 0, 0.3);
+        }
+        
+        .contact-icon i {
+            color: var(--ey-yellow);
+            font-size: 1.2rem;
+        }
+        
+        .contact-details h4 {
+            color: var(--ey-yellow);
+            margin-bottom: 5px;
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(10, 13, 17, 0.9);
+            padding: 40px 0 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 230, 0, 0.2);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 230, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 230, 0, 0.3);
+        }
+        
+        .social-link:hover {
+            background: var(--ey-yellow);
+            transform: translateY(-5px);
+        }
+        
+        .social-link i {
+            color: var(--ey-yellow);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover i {
+            color: var(--ey-black);
+        }
+        
+        .copyright {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-background {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            .contact-info {
+                justify-content: center;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding: 0 0 0 70px;
+                text-align: left;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-marker,
+            .timeline-item:nth-child(even) .timeline-marker {
+                left: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 5px 10px;
+            }
+            
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            header p {
+                font-size: 1.2rem;
+            }
+            
+            .project {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation Menu -->
+    <!-- Navigation -->
     <nav>
-        <div class="nav-container">
+        <div class="container nav-container">
             <div class="logo">
-                <h1><a href="#home">Azzam Syafrizal</a></h1>
+                <h1>Azzam Syafrizal</h1>
             </div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#ctf-writeups">CTF Writeups</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#ctf">CTF</a></li>
+                <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#certifications">Certifications</a></li>
+                
             </ul>
         </div>
     </nav>
 
-    <!-- Header Section -->
+    <!-- Header -->
     <header id="home">
-        <div class="video-background">
-            <video autoplay muted loop id="bg-video">
-                <source src="background-video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+    <div class="video-background">
+        <video autoplay muted loop id="bg-video">
+        <source src="background-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="container">
         <div class="header-container">
-            <div class="profile-background">
-                <img src="azzam.jpg" alt="Abdullah Azzam Syafrizal" class="profile-photo">
-            </div>
-            <div class="header-info">
-                <h1>Abdullah Azzam Syafrizal</h1>
-                <p>Computer Information Security and Assurance Student | CTF Player | Cybersecurity Enthusiast</p>
-            </div>
+        <div class="profile-background">
+            <img src="azzam2.png" alt="Abdullah Azzam Syafrizal" class="profile-photo">
         </div>
+        <div class="header-info">
+            <!-- Adjusted name size -->
+            <h1><span class="name-highlight" style="font-size: 2.5rem;">Abdullah Azzam Syafrizal</span></h1>
+            <p>Computer Information Security & Assurance Student</p>
+            <div class="contact-info">
+            <!-- Repositioned location -->
+
+            <div class="contact-item" >
+                <i class="fas fa-envelope"></i>
+                <span>azzamabdullah237@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <span>linkedin.com/in/azzamsyafrizal/</span>
+            </div>
+            </div>
+            <a href="#contact" class="btn">Contact Me</a>
+        </div>
+        </div>
+    </div>
     </header>
 
-    <!-- About Me Section -->
+    <!-- About Section -->
     <section id="about">
-        <h2>About Me</h2>
-        <p>Goal-driven, dedicated, and competitively minded final year Computer Information Security and Assurance Student, awarded the prestigious JPA Scholarship for academic excellence. Passionate about cybersecurity, staying updated on emerging technologies. Active participant in CTFs under the nickname "Jigenz," hackathons, and hands-on projects to enhance skills in identifying vulnerabilities and building secure systems. Eager to contribute to the industry with innovative solutions.</p>
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="card">
+                <p>Goal-driven, dedicated, and competitively minded final year Computer Information Security and Assurance Student, awarded the prestigious JPA Scholarship for academic excellence with hands-on experience in cybersecurity consulting at Ernst & Young (EY).</p>
+                <p>Driven ability in conducting technical risk assessments, evaluating infrastructure against industry standards like BNM RMIT, TIA – 942 and contributing to client-facing engagements. Combines a strong academic foundation with a competitive background in Capture The Flag (CTF) competitions, excelling in vulnerability identification and web exploitation.</p>
+                <p>Seeking to apply analytical and technical skills to help organizations build resilient and secure digital environments. I am eager to learn and contribute to the industry.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education</h2>
+            </div>
+            <div class="education-item">
+                <div class="education-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="education-content">
+                    <h3>Bachelor of Computer Information Security and Assurance with Honors</h3>
+                    <p>Universiti Sains Islam Malaysia – Nilai, Negeri Sembilan</p>
+                    <div class="date">Expected Graduation: August 2025 | Current CGPA: 3.50</div>
+                    <h4>Relevant Courses:</h4>
+                    <div class="courses">
+                        <span class="course-tag">Computer Forensics</span>
+                        <span class="course-tag">Mobile Security System</span>
+                        <span class="course-tag">Ethical Hacking</span>
+                        <span class="course-tag">Computer Safety Audit</span>
+                        <span class="course-tag">Network Security</span>
+                        <span class="course-tag">Software Quality Assurance</span>
+                        <span class="course-tag">Cryptography</span>
+                    </div>
+                    <div class="activities" style="margin-top: 20px;">
+                        <h4>Activities:</h4>
+                        <p>Cyber Hasanat of the ISA society – organized workshops and activities about cyber awareness to over 150 students at SAMBBST, Sepang and other Institutions at Yogyakarta such as SMA MUHI, UGM and UIN Sunan Kailjaga.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Ernst & Young</h3>
+                        <div class="date">February 2025 – August 2025</div>
+                        <p><strong>Intern, Technology Consulting - Cyber Risk, Compliance & Resilience</strong></p>
+                        <ul>
+                            <li>Engaged in an Infrastructure Control Review and Remediation Assessment for a major Government Pension Fund Body client</li>
+                            <li>Benchmarked against key industry standards including BNM RMIT and the TIA-942</li>
+                            <li>Assessed two key domains in the client's data centre infrastructure</li>
+                            <li>Assisted in conducting on-site walkthroughs and hosted client interviews</li>
+                            <li>Assisted to business development activities by drafting proposals</li>
+                            <li>Developed and presented technical materials</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>UMHackathon – FSCIT UM</h3>
+                        <div class="date">May 2023</div>
+                        <p><strong>Front-end Developer - Al-driven Platform for Gynecological Issues Project</strong></p>
+                        <ul>
+                            <li>Led team of 4 to develop visually engaging data visualization components</li>
+                            <li>Developed using HTML and CSS</li>
+                            <li>Successfully presented fully developed front-end to experienced development workers</li>
+                            <li>Implemented responsive web design principles</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li><strong>Programming/Scripting:</strong> Python, Flutter, Java</li>
-            <li><strong>Security Tools:</strong> Wireshark, Burp Suite, Nmap</li>
-            <li><strong>Networking:</strong> TCP/IP, DNS, VPN</li>
-            <li><strong>Cryptography:</strong> AES, RSA, DES</li>
-            <li><strong>Vulnerability Assessment & Penetration Testing</li>
-            <li><strong>Incident Response & Forensics</li>
-            <li><strong>OSINT (Open Source Intelligence)</li>
-        </ul>
+        <div class="container">
+            <div class="section-title">
+                <h2>Skills & Expertise</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">Flutter</span>
+                        <span class="skill-item">Dart</span>
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">Wireshark</span>
+                        <span class="skill-item">Burp Suite</span>
+                        <span class="skill-item">Nmap</span>
+                        <span class="skill-item">TCP/IP</span>
+                        <span class="skill-item">DNS</span>
+                        <span class="skill-item">VPN</span>
+                        <span class="skill-item">AES</span>
+                        <span class="skill-item">RSA</span>
+                        <span class="skill-item">DES</span>
+                        <span class="skill-item">Vulnerability Assessment</span>
+                        <span class="skill-item">Penetration Testing</span>
+                        <span class="skill-item">Incident Response</span>
+                        <span class="skill-item">Digital Forensics</span>
+                        <span class="skill-item">OSINT</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Professional Skills</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Risk Assessment</span>
+                        <span class="skill-item">Compliance Frameworks</span>
+                        <span class="skill-item">Infrastructure Review</span>
+                        <span class="skill-item">Remediation Planning</span>
+                        <span class="skill-item">Client Engagement</span>
+                        <span class="skill-item">Technical Documentation</span>
+                        <span class="skill-item">Team Leadership</span>
+                        <span class="skill-item">Project Management</span>
+                        <span class="skill-item">Problem Solving</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Tools & Technologies</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Firebase</span>
+                        <span class="skill-item">GitHub</span>
+                        <span class="skill-item">Microsoft Azure</span>
+                        <span class="skill-item">John the Ripper</span>
+                        <span class="skill-item">Metasploit</span>
+                        <span class="skill-item">Kali Linux</span>
+                        <span class="skill-item">Microsoft Office</span>
+                        <span class="skill-item">Video Editing</span>
+                        <span class="skill-item">SDLC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects">
-        <h2>Projects</h2>
-
-        <!-- SecurityZAM Project -->
-        <div class="project" id="securityzam">
-            <h3>1. SecurityZAM - OSINT Mobile Application</h3>
-            <p><strong>Author:</strong> Abdullah Azzam Bin Syafrizal</p>
-            <p><strong>Course:</strong> SKJ4333 - Mobile Security System</p>
-            <p><strong>Overview:</strong> SecurityZAM is an OSINT mobile application designed to enhance security with features like secure authentication, two-factor authentication (2FA), geolocation services, and more.</p>
-            <h4>Key Features</h4>
-            <ul>
-                <li><strong>Secure User Authentication:</strong> Firebase authentication, strong password policies.</li>
-                <li><strong>Two-Factor Authentication (2FA):</strong> Phone and email verification for enhanced security.</li>
-                <li><strong>Geolocation Services:</strong> IP geolocation, GPS tracking.</li>
-                <li><strong>QR Code Safety Analysis:</strong> Scans and verifies URLs using Google Safe Browsing API.</li>
-                <li><strong>Runtime Application Self-Protection (RASP):</strong> Monitors for tampering and injection attacks.</li>
-                <li><strong>Device Root Detection:</strong> Identifies compromised devices.</li>
-                <li><strong>Risk-Based Scoring:</strong> Risk assessments based on device status and location.</li>
-            </ul>
-            <h4>Watch the Demo</h4>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/gy7iQQXFK8Y?autoplay=1&mute=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="container">
+            <div class="section-title">
+                <h2>Projects</h2>
             </div>
-            <p><a href="https://github.com/Jigenz/SecurityZAM" target="_blank">View on GitHub</a></p>
-        </div>
-
-        <!-- USIM EVENTCIBLE Project -->
-        <div class="project" id="usim-eventcible">
-            <h3>2. USIM EVENTCIBLE: Event Navigation and Tracking Mobile System</h3>
-            <p><strong>Overview:</strong> USIM EVENTCIBLE is a mobile application designed for USIM students to discover, engage with, and participate in campus events. This app centralizes event information and fosters a vibrant campus community through seamless navigation and event tracking.</p>
-            <h4>Features</h4>
-            <ul>
-                <li><strong>Event Browsing:</strong> Discover upcoming events with detailed information.</li>
-                <li><strong>Navigation:</strong> Navigate to event venues with in-app maps.</li>
-                <li><strong>Event Tracking:</strong> Track participation in real-time and earn rewards.</li>
-                <li><strong>Social Sharing:</strong> Share events and updates with friends.</li>
-            </ul>
-            <h4>Watch the Project Research Presentation</h4>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/-g2G7aDpoI0?autoplay=1&mute=1" frameborder="0"allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="projects-grid">
+                <!-- EY Project -->
+                <div class="ey-project">
+                    <div class="ey-project-header">
+                        <h3>Infrastructure Control Review & Remediation Assessment</h3>
+                        <div class="ey-project-date">May 2025 - August 2025</div>
+                    </div>
+                    <div class="ey-project-content">
+                        <div class="ey-columns">
+                            <div>
+                                <h4>Project Overview</h4>
+                                <ul>
+                                    <li>Conducted comprehensive assessment of Government Pension Fund Body's data centre infrastructure and IT operations</li>
+                                    <li>Identified security vulnerabilities and operational gaps in critical systems</li>
+                                    <li>Collaborated with senior consultants to develop remediation strategies</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Key Contributions</h4>
+                                <ul>
+                                    <li>Applied key industry frameworks including BNM RMIT (Risk Management in Technology) and TIA-942 data centre standard</li>
+                                    <li>Evaluated existing policies, procedures, and controls against industry best practices</li>
+                                    <li>Contributed directly to the creation of the final Remediation Assessment Report</li>
+                                    <li>Assisted in developing client-facing Final Report Presentation with key findings and recommendations</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h4>Methodology</h4>
+                        <ul>
+                            <li>Performed gap analysis between current state and regulatory requirements</li>
+                            <li>Conducted technical risk assessments across multiple infrastructure domains</li>
+                            <li>Developed maturity models to evaluate security posture</li>
+                            <li>Created actionable roadmap for compliance improvement</li>
+                        </ul>
+                        
+                        <h4>Outcomes</h4>
+                        <ul>
+                            <li>Identified 15+ critical security vulnerabilities requiring immediate remediation</li>
+                            <li>Developed prioritized action plan for compliance with BNM RMIT standards</li>
+                            <li>Presented findings to client executives and technical teams</li>
+                            <li>Received commendation from engagement manager for thorough analysis</li>
+                        </ul>
+                    </div>
+                </div>
                 
-            </div>
-            <p><a href="https://github.com/Jigenz/USIM_EVENTCIBLE" target="_blank">View on GitHub</a></p>
-        </div>
-        <!-- Inside Audio-Tsukoyomi Project section -->
-        <div class="project" id="audio-tsukoyomi">
-            <h3>3. Audio-Tsukoyomi - Sound Encryption and Decryption (AES-CBC mode)</h3>
-            <p><strong>Author:</strong> Abdullah Azzam Syafrizal</p>
-            <p><strong>Course:</strong> SKJ4143 - Cryptography and Application</p>
-            <p><strong>Overview:</strong> A Python-based project implementing sound encryption and decryption using AES in CBC mode...</p>
-            
-            <!-- Add Image for Project -->
-            <div class="project-image">
-                <img src="Audio.jpg" alt="Audio-Tsukoyomi Project Screenshot">
-            </div>
-            <p><a href="https://github.com/Jigenz/Audio-Tsukoyomi-Sound-Encryption-and-Decryption-AES-CBC-mode/blob/main/README.md" target="_blank">View on GitHub</a></p>
-            <h4>Key Features</h4>
-            <ul>
-                <li><strong>Splash Screen:</strong> Displays application name, team information, branding image, and animation.</li>
-                <li><strong>Main Window:</strong> AES key entry, encrypt/decrypt audio files, and error handling.</li>
-                <li><strong>Encrypt/Decrypt Process:</strong> Select audio files, enter key length, and process audio files securely.</li>
-                <li><strong>Error Handling:</strong> Catches and handles exceptions during encryption/decryption.</li>
-            </ul>
-        </div>
+                <!-- SecurityZAM Project -->
+                <div class="project" id="securityzam">
+                    <h3>SecurityZAM - OSINT Mobile Application</h3>
+                    <p><strong>Author:</strong> Abdullah Azzam Bin Syafrizal</p>
+                    <p><strong>Course:</strong> SKJ4333 - Mobile Security System</p>
+                    <p><strong>Overview:</strong> SecurityZAM is an OSINT mobile application designed to enhance security with features like secure authentication, two-factor authentication (2FA), geolocation services, and more.</p>
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li><strong>Secure User Authentication:</strong> Firebase authentication, strong password policies.</li>
+                        <li><strong>Two-Factor Authentication (2FA):</strong> Phone and email verification for enhanced security.</li>
+                        <li><strong>Geolocation Services:</strong> IP geolocation, GPS tracking.</li>
+                        <li><strong>QR Code Safety Analysis:</strong> Scans and verifies URLs using Google Safe Browsing API.</li>
+                        <li><strong>Runtime Application Self-Protection (RASP):</strong> Monitors for tampering and injection attacks.</li>
+                        <li><strong>Device Root Detection:</strong> Identifies compromised devices.</li>
+                        <li><strong>Risk-Based Scoring:</strong> Risk assessments based on device status and location.</li>
+                    </ul>
+                    <h4>Watch the Demo</h4>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/gy7iQQXFK8Y?autoplay=1&mute=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <p><a href="https://github.com/Jigenz/SecurityZAM" target="_blank" class="btn">View on GitHub</a></p>
+                </div>
 
-        
+                <!-- USIM EVENTCIBLE Project -->
+                <div class="project" id="usim-eventcible">
+                    <h3>USIM EVENTCIBLE: Event Navigation and Tracking Mobile System</h3>
+                    <p><strong>Overview:</strong> USIM EVENTCIBLE is a mobile application designed for USIM students to discover, engage with, and participate in campus events. This app centralizes event information and fosters a vibrant campus community through seamless navigation and event tracking.</p>
+                    <h4>Features</h4>
+                    <ul>
+                        <li><strong>Event Browsing:</strong> Discover upcoming events with detailed information.</li>
+                        <li><strong>Navigation:</strong> Navigate to event venues with in-app maps.</li>
+                        <li><strong>Event Tracking:</strong> Track participation in real-time and earn rewards.</li>
+                        <li><strong>Social Sharing:</strong> Share events and updates with friends.</li>
+                    </ul>
+                    <h4>Watch the Project Research Presentation</h4>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/-g2G7aDpoI0?autoplay=1&mute=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <p><a href="https://github.com/Jigenz/USIM-Eventcible-Mobile-App" target="_blank" class="btn">View on GitHub</a></p>
+                </div>
+                
+                <!-- Audio-Tsukoyomi Project -->
+                <div class="project" id="audio-tsukoyomi">
+                    <h3>Audio-Tsukoyomi - Sound Encryption and Decryption (AES-CBC mode)</h3>
+                    <p><strong>Author:</strong> Abdullah Azzam Syafrizal</p>
+                    <p><strong>Course:</strong> SKJ4143 - Cryptography and Application</p>
+                    <p><strong>Overview:</strong> A Python-based project implementing sound encryption and decryption using AES in CBC mode with user-friendly interface.</p>
+                    
+                    <div class="project-image">
+                        <img src="Audio.jpg" alt="Audio-Tsukoyomi Project Screenshot">
+                    </div>
+                    <p><a href="https://github.com/Jigenz/Audio-Tsukoyomi-Sound-Encryption-and-Decryption-AES-CBC-mode/blob/main/README.md" target="_blank" class="btn">View on GitHub</a></p>
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li><strong>Splash Screen:</strong> Displays application name, team information, branding image, and animation.</li>
+                        <li><strong>Main Window:</strong> AES key entry, encrypt/decrypt audio files, and error handling.</li>
+                        <li><strong>Encrypt/Decrypt Process:</strong> Select audio files, enter key length, and process audio files securely.</li>
+                        <li><strong>Error Handling:</strong> Catches and handles exceptions during encryption/decryption.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- CTF Writeups Section -->
-    <section id="ctf-writeups">
-        <h2>CTF Writeups</h2>
-        <div class="ctf-writeup">
-            <h3>SHERPA CTF - Dell Global Business Center Sdn. Bhd Cyberjaya 23-24 Nov</h3>
-            <p><a href="https://github.com/Jigenz/SHERPA-CTF-Write-Up" target="_blank">View Full Writeup</a></p>
-            <p><strong>Challenge Name:</strong> Download The Flag</p>
-            <p><strong>Category:</strong> Miscellaneous (Misc)</p>
-            <p><strong>Points:</strong> 500</p>
-            <p><strong>Difficulty:</strong> Medium</p>
-            <p><strong>Creator:</strong> SKRCTF</p>
-            <h4>Challenge Overview</h4>
-            <p>The objective was to retrieve the flag from a web server without downloading the entire 100 GB file. The provided information for the instance was:</p>
-            <pre>IP Address: 52.148.100.67</pre>
-            <pre>Port: 30632</pre>
-            <pre>Lan Domain: 72-d5af8d6d-b3ea-4a35-b1b9-b0862e449658</pre>
-            <p>Remaining Time: 3576s (~59 minutes)</p>
-
-            <h4>Solution Steps</h4>
-            <ol>
-                <li><strong>Initial Reconnaissance:</strong>
-                    <ul>
-                        <li><strong>Port Scanning:</strong> We used Nmap to identify services on the target IP and port:</li>
-                        <pre>nmap -sV 52.148.100.67 -p 30632</pre>
-                        <pre>PORT      STATE SERVICE VERSION</pre>
-                        <pre>30632/tcp open  http    nginx 1.27.2</pre>
-                        <li><strong>Accessing the Web Server:</strong> Using curl to access the index page:</li>
-                        <pre>curl -v http://52.148.100.67:30632</pre>
-                        <pre>Output: Index of /</pre>
-                        <p>The index page listed a 100 GB flag.txt file.</p>
-                    </ul>
-                </li>
-                <li><strong>Strategy Development:</strong>
-                    <ul>
-                        <li>Partial Content Retrieval using HTTP range requests.</li>
-                        <li>Pattern searching for the flag in retrieved file chunks.</li>
-                    </ul>
-                </li>
-                <li><strong>Partial Content Retrieval:</strong>
-                    <ul>
-                        <li>Fetching the first 1,000 bytes:</li>
-                        <pre>curl -r 0-999 http://52.148.100.67:30632/flag.txt -o flag_start.txt</pre>
-                    </ul>
-                </li>
-            </ol>
-
+    <!-- CTF Section -->
+    <section id="ctf">
+        <div class="container">
+            <div class="section-title">
+                <h2>Capture The Flag (CTF) Competitions</h2>
+            </div>
+            <div class="card">
+                <p>Actively compete in jeopardy-style CTF competitions, demonstrating practical skills in web exploitation, digital forensics, cryptography, and steganography. Proficient in utilizing tools such as Wireshark and John the Ripper to solve complex challenges, including performing SQL injection to bypass authentication and extract data.</p>
+            </div>
             
+            <div class="ctf-container">
+                <div class="ctf-card">
+                    <h3>Siber Slaga CTF 2024</h3>
+                    <div class="date">Online Competition</div>
+                    <div class="placement">Top 50th/140 Teams</div>
+                </div>
+                
+                <div class="ctf-card">
+                    <h3>UTAR CTF 2024</h3>
+                    <div class="date">Kampar, Perak</div>
+                    <div class="placement">11th/25 Teams</div>
+                </div>
+                
+                <div class="ctf-card">
+                    <h3>Atur Kreatif USIM 2024</h3>
+                    <div class="date">FST USIM</div>
+                    <div class="placement">5th/80 Teams</div>
+                </div>
+                
+                <div class="ctf-card">
+                    <h3>UNIKL The Game of Hackers 2023</h3>
+                    <div class="date">UnIKL MIIT City Campus, Kuala Lumpur</div>
+                    <div class="placement">19th/30 Teams</div>
+                </div>
+                
+                <div class="ctf-card">
+                    <h3>APU Battle of Hacker ASEAN Category 2023</h3>
+                    <div class="date">APU Campus, Kuala Lumpur</div>
+                    <div class="placement">14th/34 Teams</div>
+                </div>
+                
+                <div class="ctf-card">
+                    <h3>UMCTF 2025</h3>
+                    <div class="date">PASUM UM</div>
+                    <div class="placement">17th/80 Teams</div>
+                </div>
+            </div>
         </div>
-        
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements">
+        <div class="container">
+            <div class="section-title">
+                <h2>Achievements</h2>
+            </div>
+            <div class="achievements-container">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Dean's List Award</h3>
+                    <p>Achieved a GPA above 3.60, receiving a certificate for academic excellence</p>
+                    <div class="date">Semester II 2021/22, 2022/23, 2023/24</div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-volleyball-ball"></i>
+                    </div>
+                    <h3>Sukan Fakulti Sains dan Teknologi USIM (SUFAST)</h3>
+                    <p>Represented the Faculty of Science and Technology for Volleyball Tournament</p>
+                    <div class="date">2022 and 2023</div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-chess"></i>
+                    </div>
+                    <h3>Kejohanan Sukan Antara Fakulti (SUFA) USIM 2024</h3>
+                    <p>Represented Faculty of Science and Technology for Inter-Faculty Chess Championship</p>
+                    <div class="date">2024</div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>JPA Scholarship</h3>
+                    <p>Awarded the prestigious JPA Scholarship for academic excellence</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Certifications Section -->
     <section id="certifications">
-        <h2>Certifications</h2>
-        <div class="certification">
-            <h3>Microsoft Certified: Azure AI Fundamentals</h3>
-            <p><strong>Issued by:</strong> Microsoft | <strong>Credential ID:</strong> 12345 | <strong>Date Issued:</strong> April 2023</p>
-            <p><a href="https://drive.google.com/file/d/1DMeEt_JyIHScfeikE0n2_ibnUk0QUwEP/view?usp=sharing" target="_blank">View Certificate</a></p>
-        </div>
-        <div class="certification">
-            <h3>Microsoft Certified: Security, Compliance, and Identity Fundamentals</h3>
-            <p><strong>Issued by:</strong> Microsoft | <strong>Credential ID:</strong> 67890 | <strong>Date Issued:</strong> June 2024</p>
-            <p><a href="https://drive.google.com/file/d/1k-nEOyEdvz0-0NUAqfJb9Qrk09CmVQpW/view?usp=sharing" target="_blank">View Certificate</a></p>
-        </div>
-        <div class="certification">
-            <h3>CompTIA IT Fundamentals (ITF+)</h3>
-            <p><strong>Issued by:</strong> CompTIA | <strong>Credential ID:</strong> 54321 | <strong>Date Issued:</strong> November 2024</p>
-            <p><a href="https://drive.google.com/file/d/15orzp6zT3peshDqHikjsTZd1TbuQRBAI/view?usp=sharing" target="_blank">View Certificate</a></p>
+        <div class="container">
+            <div class="section-title">
+                <h2>Certifications</h2>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <div class="cert-icon">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
+                        <div>
+                            <h3>Azure AI Fundamentals</h3>
+                            <div class="issuer">Microsoft</div>
+                        </div>
+                    </div>
+                    <p>Fundamentals of artificial intelligence and Azure AI services</p>
+                    <div class="date">Issued: April 2023</div>
+                    <a href="https://drive.google.com/file/d/1DMeEt_JyIHScfeikE0n2_ibnUk0QUwEP/view?usp=sharing" class="btn" style="margin-top: 20px;" target="_blank">View Credential</a>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <div class="cert-icon">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
+                        <div>
+                            <h3>Security, Compliance, and Identity Fundamentals</h3>
+                            <div class="issuer">Microsoft</div>
+                        </div>
+                    </div>
+                    <p>Core concepts of Microsoft security, compliance, and identity solutions</p>
+                    <div class="date">Issued: June 2024</div>
+                    <a href="https://drive.google.com/file/d/1k-nEOyEdvz0-0NUAqfJb9Qrk09CmVQpW/view?usp=sharing" class="btn" style="margin-top: 20px;" target="_blank">View Credential</a>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <div class="cert-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div>
+                            <h3>CompTIA IT Fundamentals (ITF+)</h3>
+                            <div class="issuer">CompTIA</div>
+                        </div>
+                    </div>
+                    <p>Essential IT skills and knowledge for entry-level IT professionals</p>
+                    <div class="date">Issued: June 2024</div>
+                    <a href="https://drive.google.com/file/d/15orzp6zT3peshDqHikjsTZd1TbuQRBAI/view?usp=sharing" class="btn" style="margin-top: 20px;" target="_blank">View Credential</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2>Contact Me</h2>
-        <p>If you'd like to get in touch, feel free to reach out through the following:</p>
-        <ul>
-            <li><strong>Email:</strong> azzamabdullah237@gmail.com</li>
-            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/azzamsyafrizal/" target="_blank">Azzam Syafrizal</a></li>
-        </ul>
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+            </div>
+
+                <div class="contact-info-card">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Kuala Lumpur, Malaysia</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+601151784305</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>azzamabdullah237@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>LinkedIn</h4>
+                            <p>linkedin.com/in/azzamsyafrizal/</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>GitHub</h4>
+                            <p>github.com/Jigenz</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Abdullah Azzam Syafrizal. All rights reserved.</p>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/azzamsyafrizal/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/Jigenz" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:azzamabdullah237@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="copyright">© 2024 Abdullah Azzam Syafrizal. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Sticky navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.4)';
+                nav.style.padding = '10px 0';
+            } else {
+                nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.4)';
+                nav.style.padding = '15px 0';
+            }
+        });
+        
+        // Auto-play videos
+        const videos = document.querySelectorAll('iframe');
+        videos.forEach(video => {
+            video.setAttribute('allow', 'autoplay; encrypted-media');
+        });
+    </script>
 </body>
 </html>
